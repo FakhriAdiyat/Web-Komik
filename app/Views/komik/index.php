@@ -3,7 +3,13 @@
 <div class="container">
     <div class="row">
         <div class="col">
+          <a href="/komik/create" class="btn btn-primary mt-3">Tambah Komik</a>
             <h1>List Komik</h1>
+            <?php if(session()->getFlashdata('pesan')): ?> 
+            <div class="alert alert-success" role="alert">
+              <?= session()->getFlashdata('pesan'); ?>
+            </div>
+            <?php endif; ?>
             <table class="table">
   <thead>
     <tr>
@@ -14,7 +20,7 @@
     </tr>
   </thead>
   <tbody>
-    <?= $i = 1; ?>
+    <?php $i = 1; ?>
     <?php foreach ($komik as $k) : ?>
     <tr>
       <th scope="row"><?= $i++; ?></th>

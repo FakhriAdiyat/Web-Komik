@@ -8,6 +8,8 @@ class KomikModel extends Model
 {
     protected $table = 'komik';
     protected $useTimestamps = true;
+    // ijin fields yang boleh di isi dari form tambah komik
+    protected $allowedFields = ['judul', 'slug', 'penulis', 'penerbit', 'sampul'];
 
     public function getKomik($slug = false)
     {
